@@ -8,3 +8,15 @@ $ yarn
 $ node index.js
 
 ```
+
+Run prisma server and postgres database via docker
+
+```bash
+$ docker-compose up
+$ yarn deploy
+$ yarn start
+```
+
+You can access prisma API server via: http://localhost:4466/server/dev
+
+You can visualization data of postgres db via: http://localhost:4466/server/dev/_admin
