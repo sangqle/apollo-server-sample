@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js",
+    "deploy:prisma": "prisma deploy --env-file variables.env"
+  },
   "dependencies": {
     "apollo-server": "^2.7.1",
     "apollo-server-express": "^2.7.1",
