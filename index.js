@@ -4,12 +4,10 @@ const { createServer } = require('http')
 const pubsub = new PubSub()
 const SOMETHING_CHANGED_TOPIC = 'something_changed'
 
-const typeDefs = require('./modules/schema/schema')
-const resolvers = require('./resolvers')
-
+const modules = require('./modules')
 // Provide resolver functions for your schema fields
 const server = new ApolloServer({
-  modules: [require('./modules/user')],
+  modules: [...modules],
   context: req => ({ ...req, pubsub })
 })
 

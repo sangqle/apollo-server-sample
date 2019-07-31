@@ -1,7 +1,4 @@
-const { gql } = require('apollo-server')
+const user = require('./user')
+const post = require('./post')
 
-const typeDefs = gql`
-  extend type Query {
-    me: User
-  }
-`
+module.exports = [user, post]
