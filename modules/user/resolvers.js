@@ -1,6 +1,8 @@
 const resolvers = {
   Query: {
-    me(_, args, ctx, info) {
+    async me(_, args, ctx, info) {
+      const user = await ctx.prisma.users({}, info)
+      console.log(user)
       return `It's working`
     }
   },

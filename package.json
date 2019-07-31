@@ -12,6 +12,7 @@
     "apollo-server-express": "^2.7.1",
     "express": "^4.17.1",
     "graphql": "^14.4.2",
-    "prisma": "^1.34.3"
+    "prisma": "^1.34.3",
+    "prisma-client-lib": "^1.34.3"
   }
 }

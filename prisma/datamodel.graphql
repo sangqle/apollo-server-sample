@@ -1,18 +1,35 @@
 type User {
   id: ID! @id
   user_name: String!
-  email: String!
-  post: [Post!]
+  email: String! @unique
+  password: String!
+  post: [Post!] @relation(name: "UserOwnPost", onDelete: CASCADE)
+  stories: [Story!] @relation(name: "WrittenStories")
+  likedStories: [Story!] @relation(name: "LikedStories")
+  isOnline: Boolean @default(value: false)
 }
 type Post {
   id: ID! @id
   title: String
-  owner: User!
-  skill: [Skill!]
+  owner: User! @relation(name: "UserOwnPost", onDelete: SET_NULL)
+  skill: [Skill!] @relation(name: "PostHaveSkill", onDelete: SET_NULL)
 }
 
 type Skill {
   id: ID! @id
   name: String!
-  post: [Post!]
+  post: [Post!] @relation(name: "PostHaveSkill", onDelete: SET_NULL)
+}
+
+type Story {
+  id: ID! @id
+  text: String!
+  author: User! @relation(name: "WrittenStories")
+  likedBy: [User!] @relation(name: "LikedStories")
+}
+
+type Conversation {
+  id: ID! @id
+  content: String
+  paticipants: [User!]
 }
