@@ -1,8 +1,8 @@
 const resolvers = {
   Query: {
     async me(_, args, ctx, info) {
+      console.log(ctx.connection);
       const user = await ctx.prisma.users({}, info)
-      console.log(user)
       return `It's working`
     }
   },
@@ -15,6 +15,14 @@ const resolvers = {
         id: 'id-user1',
         email: args.input.email,
         password: args.input.password
+      }
+    }
+  },
+  Subscription: {
+    something_changed: {
+      subscribe: (_, args, ctx) =>{
+        console.log(ctx.connection);
+        return ctx.pubsub.asyncIterator('something_changed')
       }
     }
   }

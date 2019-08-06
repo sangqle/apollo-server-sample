@@ -11,7 +11,7 @@ const typeDefs = gql`
   }
 
   extend type Subscription {
-    user: String
+    something_changed: String
   }
   input Login {
     email: String!
