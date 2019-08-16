@@ -1,4 +1,4 @@
-endpoint: 'http://localhost:4466/server_test/dev'
+endpoint: "http://localhost:4466/server_test_v5/dev"
 datamodel:
   - datamodel.graphql
 generate:
