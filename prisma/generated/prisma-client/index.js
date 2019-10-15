@@ -19,10 +19,13 @@ var models = [
   {
     name: "Post",
     embedded: false
+<<<<<<< HEAD
   },
   {
     name: "Comment",
     embedded: false
+=======
+>>>>>>> bcd32d4da86b9dbb14ab460c4d35b9a417fb4c11
   }
 ];
 exports.Prisma = prisma_lib_1.makePrismaClientClass({
