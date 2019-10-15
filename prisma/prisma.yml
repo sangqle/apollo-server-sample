@@ -1,9 +1,15 @@
-endpoint: "http://localhost:4466/server_test_v5/dev"
+endpoint: "http://localhost:4466/test1/dev"
 datamodel:
-  - datamodel.graphql
+  - ./datamodel/Tweet.graphql
+  - ./datamodel/User.graphql
+  - ./datamodel/Post.graphql
 generate:
   - generator: javascript-client
     output: ./generated/prisma-client/
 hooks:
   post-deploy:
     - prisma generate
+seed:
+  run: node seed.js
+# seed:
+#   import: seed.graphql

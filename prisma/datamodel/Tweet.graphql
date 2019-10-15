@@ -1,0 +1,13 @@
+type Tweet {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  text: String
+  owner: User
+  location: Location
+}
+
+type Location {
+  id: ID! @id
+  latitude: Float
+  longitude: Float
+}

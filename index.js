@@ -14,16 +14,10 @@ const app = express();
 
 const server = new ApolloServer({
   modules: [...modules],
-  context: ({ request, connection }) => {
-    if (connection) {
-      return {
-        connection,
-        ...request,
-        prisma,
-        pubsub
-      };
-    }
-    return { ...request, prisma, pubsub };
+  context: req => {
+    return {
+      ...req
+    };
   },
   subscriptions: {
     path: "/websocket",

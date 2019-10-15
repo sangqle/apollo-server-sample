@@ -1,0 +1,5 @@
+mutation createUser {
+  createUser(data: { handle: "test2" }) {
+    id
+  }
+}
